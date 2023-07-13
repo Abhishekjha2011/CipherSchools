@@ -1,0 +1,9 @@
+1.git config --global user.name "Abhishek Jha"
+2.git config --global user.email "Sjha20112001@gmail.com
+3.git init
+4.git add .
+4.git add   Anyfilename
+5.git commit -m"version 1"
+5.git status
+6.for Again save - git commit -m"version 2"
+7.Clear
