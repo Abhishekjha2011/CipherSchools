@@ -1,0 +1,41 @@
+package abstraction;
+interface M
+{
+int x = 10;
+void fun();
+}
+interface N{
+int x = 20;
+void fun();
+}
+class c implements M,N // Multiple inheritance in Java
+{
+public void fun()
+{
+System.out.println("Hello,I'm Function in C");
+System.out.println(M.x); //Ambiguity resolved using Fully Qualified Name
+System.out.println(N.x);//Ambiguity resolved using Fully Qualified Name
+System.out.println(M.super.hashCode());
+System.out.println(N.super.hashcode());
+}
+}
+interface O extends M,N //Multiple inheritance through Interfaces
+{
+void fun();
+}
+class D implements O
+{
+public void fun()
+{
+System.out.println("Hello,I'm function in D");
+}
+}
+public class MultipleInheritanceStudy {
+public static void main(String[] args)
+{
+C c=new C();
+c.fun();
+D d = new D();
+d.fun();
+}
+}

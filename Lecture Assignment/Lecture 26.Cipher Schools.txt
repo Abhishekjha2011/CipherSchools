@@ -1,0 +1,43 @@
+// Max Sum Subarray of size K
+
+class Solution
+{
+ static int maximumSumSubarray(int k,ArrayList<Integer> Arr,int N)
+{
+ //int max = Integer.MIN_VALUE;
+ //for(int i=0;i<=N-K;i++)
+//{
+ // int sum = 0;
+  //for(int j=0;j<K;j++)
+//{
+ // sum =sum +Arr.get(i+j);
+//}
+//if(sum>max) max = sum;
+   //  }
+//return max;
+
+
+int sum = 0;
+//finding sum of first window
+for(int i=0;i<K;i++)
+{
+sum = sum + Arr.get(i);
+}
+int max = sum; //to include comparison for first window
+//Sum of first window found
+for(int i=0;i<N-K;i++)
+{
+sum = sum - Arr.get(i) + Arr.get(i+K);
+if(sum>max) max = sum;
+}
+
+
+
+
+
+
+
+
+
+   }
+}

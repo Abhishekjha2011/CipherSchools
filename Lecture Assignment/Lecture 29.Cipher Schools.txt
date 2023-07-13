@@ -1,0 +1,90 @@
+package strings;
+ //public class checkPalindrome
+//{
+//static boolean checkPalindrome(String s)
+//{
+//Arora
+//s = s.toLowerCase(); //Case doesn't matter in finding Palindrome
+//or
+//s = s.toUpperCase()
+//int l = 0;
+//int r = s.length() - 1;
+//while(l<r)
+//{
+//if(s.charAt(l) != s.charAt(r))
+//{
+//return false;
+//}
+//l++;
+//r--;
+//}
+//we reach here means loop did not return false. Means string is palindrome
+//return true;
+//}
+//public static void main(String[] args)
+//{
+//String s =  "MADAM";
+//String s2 =  "CIPHER";
+//String s3 =  "Madam";//Yes this is a palindrome
+//System.out.println(checkPalindrome(s));
+//System.out.println(checkPalindrome(s2));
+//System.out.println(checkPalindrome(s3));
+//  }
+// }
+public class Anagrams
+{
+static boolean isAnagram(String s1, String s2)
+{
+//if Length is not equal - they can't be anagrams
+if(s1.length() != s2.length()) return false;
+
+//Let's say -> for our scenario, we can ignore the case of strings
+s1 = s1.toLowerCase();
+s2 = s2.toLowerCase();
+
+int n = s1.length();
+
+int freqArr1[] = new int[256];//create for 256 if we have to include spaces and all
+int freqArr2[] = new int[256];
+//IN frequency Array -> 0 means 'a' and 25 means 'z'
+
+for(int i=0;i<n;i++)
+{
+//for string 1
+int index1 = s1.charAt(i); //mapping character to index
+freqArr1[index1]++;
+
+//for string2 
+int index2 = s2.charAt(i);
+freqArr1[index2]++;
+  }
+//freq array have been created
+
+for(int i=0;i<256;i++)
+{
+if(freqArr1[i]!=freqArr2[i])
+{ 
+    return false;
+  }
+//if reached here means freq arrays are equal
+     return true;
+ }
+public static void main(String[] args)
+{
+System.out.println(isAnagram(" Hello  CAT"," Hello TAC"));
+System.out.println(isAnagram(" Hello CAT"," Hello TAG"));
+System.out.println(isAnagram("CAT","TACC"));
+
+  }
+}
+
+
+
+
+
+
+
+
+
+
+

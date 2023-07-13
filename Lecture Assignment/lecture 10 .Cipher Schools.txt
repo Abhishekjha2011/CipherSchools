@@ -1,0 +1,32 @@
+package keywords;
+class A{
+final int noOfAlphabwts =26; //Final Variables-Value once assigned cannot be Changed
+final int noOfDigits;
+//Either Asign the value at time of Decleratiom or assign the value inside Constructor
+
+A()
+{
+noofDigits =10;
+}
+final void fun()
+{
+System.out.println("Hi, I'm a function in class A");
+}
+}
+final class B extends A //final class cannot be inherited
+{
+// void fun()
+// {
+// System.out.println("I'm function in B overriding function in A");
+// }
+}
+// class c extends B{
+//
+//}
+
+public class FinalStudy {
+public static void main(String[] args)
+{
+//
+
+}
